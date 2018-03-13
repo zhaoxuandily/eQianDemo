@@ -57,7 +57,6 @@ export default {
   height: 620px;
   height: 93vh;
   overflow: auto;
-  background: #fff;
 }
 .bottom-img{
   position: fixed;
