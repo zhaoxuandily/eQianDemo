@@ -33,10 +33,14 @@ export default {
 
 <style>
 .myfilesPage{
-  position: relative
+  position: relative;
+  padding-top: 46px;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
 }
 .bottom-img{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -48,7 +52,7 @@ export default {
 }
 .link-doc{
   position: absolute;
-  top: 0;
+  top: 46px;
   left: 0;
   width: 100%;
   height: 80px;

@@ -54,12 +54,13 @@ export default {
 <style>
 .flowdetailPage {
   position: relative;
-  height: 620px;
-  height: 93vh;
+  padding-top: 46px;
   overflow: auto;
+  box-sizing: border-box;
+  height: 100%;
 }
 .bottom-img{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -71,14 +72,14 @@ export default {
 }
 .flowdetailPage .link-view {
   position: absolute;
-  top: 0;
+  top: 46px;
   left: 0;
   width: 100%;
   height: 100px;
   height: 27vw;
 }
 .flowdetailPage .link-sign {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
   width: 33.3%;

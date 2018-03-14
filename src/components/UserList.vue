@@ -43,10 +43,14 @@ export default {
 
 <style>
 .userlistPage{
-  position: relative
+  position: relative;
+  padding-top: 46px;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
 }
 .bottom-img{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -58,7 +62,7 @@ export default {
 }
 .userlistPage .link-view{
   position: absolute;
-  top: 0;
+  top: 46px;
   right: 0;
   width: 30%;
   height: 50px;
@@ -66,8 +70,8 @@ export default {
 }
 .userlistPage .link-add{
   position: absolute;
-  top: 50px;
-  top: 13vw;
+  top: 96px;
+  top: calc(13vw + 46px);
   right: 0;
   width: 30%;
   height: 50px;

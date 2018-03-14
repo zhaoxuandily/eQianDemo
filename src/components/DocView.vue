@@ -32,8 +32,8 @@ export default {
 <style>
 .docviewPage {
   position: relative;
-  height: 620px;
-  height: 93vh;
+  padding-top: 46px;
+  height: 100%;
   overflow: auto;
 }
 .docviewPage .page-img {

@@ -144,8 +144,9 @@ export default {
 <style>
 .app{
   position: relative;
-  height: 620px;
-  height: 93vh;
+  padding-top: 46px;
+  box-sizing: border-box;
+  height: 100%;
   overflow: auto;
   background: #fff;
 }

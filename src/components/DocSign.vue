@@ -69,8 +69,9 @@ export default {
 <style>
 .docsignPage{
   position: relative;
-  height: 620px;
-  height: 93vh;
+  padding-top: 46px;
+  box-sizing: border-box;
+  height: 100%;
   overflow: auto;
 }
 .docsignPage .page-img{
@@ -95,7 +96,7 @@ export default {
   display: block;
 }
 .seal1{
-  position: absolute;
+  position: fixed;
   bottom: 45px;
   bottom: 12vw;
   height: 85px;
