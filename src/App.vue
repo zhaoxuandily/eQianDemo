@@ -40,7 +40,7 @@ export default {
       return 'vux-pop-' + (this.direction === 'forward' ? 'in' : 'out')
     },
     preventGoBack: function () {
-      if (this.$route.path === '/flowdetail/4' || this.$route.path === '/') {
+      if (this.$route.params.type === '4' || this.$route.path === '/') {
         return true
       }
     }

@@ -1,14 +1,22 @@
 <template>
   <div class="flowdetailPage" v-if=" type === '1' ">
+    <router-link :to="{path:'/docview/1/'+id }" >
+      <img class="page-img" v-if="id === '1' " src="../assets/flowdetail_top_1.png" >
+      <img class="page-img" v-if="id === '2' " src="../assets/flowdetail_top_2.png" >
+      <img class="page-img" v-if="id === '3' " src="../assets/flowdetail_top_3.png" >
+    </router-link>
     <img class="page-img" src="../assets/flowdetail1.png">
     <img class="bottom-img" src="../assets/flowdetail1_bottom.png"> 
-    <router-link to="/docview/1" class="link-view"></router-link>
-    <router-link to="/docsign" class="link-sign"></router-link>
+    <router-link :to="{path:'/docsign/'+id }" class="link-sign"></router-link>
   </div>
   <div class="flowdetailPage" v-else-if=" type === '2' ">
+    <router-link :to="{path:'/docview/2/'+id }" >
+      <img class="page-img" v-if="id === '1' " src="../assets/flowdetail_top_1.png" >
+      <img class="page-img" v-if="id === '2' " src="../assets/flowdetail_top_2.png" >
+      <img class="page-img" v-if="id === '3' " src="../assets/flowdetail_top_3.png" >
+    </router-link>
     <img class="page-img" src="../assets/flowdetail2.png"> 
     <img class="bottom-img" src="../assets/flowdetail2_bottom.png"> 
-    <router-link to="/docview/2" class="link-view"></router-link>
     <div class="link-sign" @click="show = true"></div>
 
     <div v-transfer-dom>
@@ -19,12 +27,20 @@
     </div>
   </div> 
   <div class="flowdetailPage" v-else-if=" type === '3' ">
-    <img class="page-img" src="../assets/flowdetail3.png"> 
-    <router-link to="/docview/3" class="link-view"></router-link>
+     <router-link :to="{path:'/docview/3/'+id}" >
+      <img class="page-img" v-if="id === '1' " src="../assets/flowdetail_top_1.png" >
+      <img class="page-img" v-if="id === '2' " src="../assets/flowdetail_top_2.png" >
+      <img class="page-img" v-if="id === '3' " src="../assets/flowdetail_top_3.png" >
+    </router-link>
+    <img class="page-img" src="../assets/flowdetail3.png">
   </div> 
   <div class="flowdetailPage" v-else-if=" type === '4' ">
+    <router-link :to="{path:'/docview/3/'+id}" >
+      <img class="page-img" v-if="id === '1' " src="../assets/flowdetail_top_1.png" >
+      <img class="page-img" v-if="id === '2' " src="../assets/flowdetail_top_2.png" >
+      <img class="page-img" v-if="id === '3' " src="../assets/flowdetail_top_3.png" >
+    </router-link>
     <img class="page-img" src="../assets/flowdetail4.png"> 
-    <router-link to="/docview/1" class="link-view"></router-link>
   </div>  
 </template>
 
@@ -40,12 +56,16 @@ export default {
   },
   data () {
     return {
-      show: false
+      show: false,
+      baseurl: '../static/images/flowdetail_top_1.png'
     }
   },
   computed: {
     type: function () {
       return this.$route.params.type
+    },
+    id: function () {
+      return this.$route.params.id
     }
   }
 }

@@ -1,13 +1,22 @@
 <template>
-  <div class="docviewPage" v-if=" id === '1' ">
+  <div class="docviewPage" v-if=" id === '1' && type != '3' ">
     <img class="page-img" src="../assets/doc1.png"> 
   </div>
-  <div class="docviewPage" v-else-if=" id === '2' ">
+  <div class="docviewPage" v-else-if=" id === '1' && type === '3' ">
+    <img class="page-img" src="../assets/doc1_1.png"> 
+  </div>
+  <div class="docviewPage" v-else-if=" id === '2' && type != '3' ">
     <img class="page-img" src="../assets/doc2.png"> 
-  </div>  
-  <div class="docviewPage" v-else-if=" id === '3' ">
+  </div>
+  <div class="docviewPage" v-else-if=" id === '2' && type === '3' ">
+    <img class="page-img" src="../assets/doc2_1.png"> 
+  </div> 
+  <div class="docviewPage" v-else-if=" id === '3' && type != '3' ">
     <img class="page-img" src="../assets/doc3.png"> 
-  </div>   
+  </div>
+  <div class="docviewPage" v-else-if=" id === '3' && type === '3' ">
+    <img class="page-img" src="../assets/doc3_1.png"> 
+  </div>
 </template>
 
 <script>
@@ -22,6 +31,9 @@ export default {
     }
   },
   computed: {
+    type: function () {
+      return this.$route.params.type
+    },
     id: function () {
       return this.$route.params.id
     }

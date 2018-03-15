@@ -1,13 +1,18 @@
 <template>
   <div class="userlistPage" >
+    <img class="page-img" v-if="id === '1' " src="../assets/userlist0_top_1.png" >
+    <img class="page-img" v-if="id === '2' " src="../assets/userlist0_top_1.png" >
+    <img class="page-img" v-if="id === '3' " src="../assets/userlist0_top_1.png" >
     <img class="page-img" v-show="type === '1' && !addUser" src="../assets/userlist0.png"> 
-    <img class="page-img" v-show="type === '1' && addUser" src="../assets/userlist1.png"> 
+    <img class="page-img" v-show="type === '1' && addUser && !selectUser" src="../assets/userlist1.png"> 
+    <img class="page-img" v-show="type === '1' && addUser && selectUser" src="../assets/userlist1_1.png"> 
     <img class="page-img" v-show="type === '3'" src="../assets/userlist2.png"> 
     <img class="bottom-img" src="../assets/myfiles_bottom.png"> 
-    <router-link to="/docview/1" class="link-view"></router-link>
+    <router-link :to="{ path:'/docview/1/' + id}" class="link-view"></router-link>
     <div class="link-add" @click="addUser = true"></div>
-    <router-link to="/userlist/3" v-if="addUser" class="btn-sure" replace></router-link>
-    <router-link to="/docsign" v-if="type === '3' || (type === '1' && !addUser)" class="btn-sure"></router-link>
+    <div class="link-select" v-if=" type === '1' && addUser " @click="selectUser = true"></div>
+    <router-link :to="{path:'/userlist/3/' + id}" v-if="addUser" class="btn-sure" replace></router-link>
+    <router-link :to="{path:'/docsign/'+id }" v-if="type === '3' || (type === '1' && !addUser)" class="btn-sure"></router-link>
     <div class="btn-cancel" @click="back" ></div>
   </div>    
 </template>
@@ -21,12 +26,16 @@ export default {
 
   data () {
     return {
-      addUser: false
+      addUser: false,
+      selectUser: false
     }
   },
   computed: {
     type: function () {
       return this.$route.params.type
+    },
+    id: function () {
+      return this.$route.params.id
     }
   },
   methods: {
@@ -76,6 +85,15 @@ export default {
   width: 30%;
   height: 50px;
   height: 13vw;
+}
+.userlistPage .link-select{
+  position: absolute;
+  top: 186px;
+  top: calc(37vw + 46px);
+  left: 0;
+  width: 100%;
+  height: 45px;
+  height: 12vw;
 }
 .userlistPage .btn-sure{
   position: fixed;

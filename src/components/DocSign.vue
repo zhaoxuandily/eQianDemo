@@ -1,13 +1,13 @@
 <template>
   <div class="docsignPage">
-    <img class="page-img" src="../assets/doc1.png">
+    <img class="page-img" v-if="id === '1' " src="../assets/doc1.png" >
+    <img class="page-img" v-else-if="id === '2' " src="../assets/doc2.png" >
+    <img class="page-img" v-else-if="id === '3' " src="../assets/doc3.png" >
     <img class="sign_middle" src="../assets/sign_middle.png">
-    <div class="seal-drag" v-drag id="sealdrag" v-show="showSeal"><img src="../assets/seal.png"></div>
+    <div class="seal-drag " :class="'doc'+ id" v-drag id="sealdrag" v-show="showSeal"><img src="../assets/seal.png"></div>
     <div class="bottom-bar">
       <img src="../assets/sign_bottom.png">
       <div class="seal1" @click="onShowSeal"></div>
-      <div class="seal2"></div>
-      <div class="seal3"></div>
       <div class="btn-sure" @click="show = true"></div>   
     </div>
     <div v-transfer-dom>
@@ -35,13 +35,18 @@ export default {
       showSeal: false
     }
   },
+  computed: {
+    id: function () {
+      return this.$route.params.id
+    }
+  },
   methods: {
     onConfirm () {
-      this.$router.replace({ path: '/sendsms' })
+      this.$router.replace({ path: '/sendsms/' + this.id })
     },
     onShowSeal () {
       this.showSeal = true
-      document.getElementsByClassName('docsignPage')[0].scrollTop = 800
+      document.getElementsByClassName('docsignPage')[0].scrollTop = document.getElementsByClassName('page-img')[0].height
     }
   },
   directives: {
@@ -106,28 +111,6 @@ export default {
   left: 70px;
   left: 19vw;
 }
-.seal2{
-  position: absolute;
-  bottom: 45px;
-  bottom: 12vw;
-  height: 85px;
-  height: 23vw;
-  width: 72px;
-  width: 19vw;
-  left: 152px;
-  left: 41vw;
-}
-.seal3{
-  position: absolute;
-  bottom: 45px;
-  bottom: 12vw;
-  height: 85px;
-  height: 23vw;
-  width: 82px;
-  width: 22vw;
-  left: 222px;
-  left: 60vw;
-}
 
 .btn-sure{
   position: absolute;
@@ -137,10 +120,25 @@ export default {
   height: 45px;
   height: 12vw;
 }
-.seal-drag{
+.seal-drag.doc1{
   position: absolute;
-  top: 1100px;
-  top: 300vw;
+  bottom:  -150vw;
+  left: 50%;
+  width: 70px;
+  background: rgba(255,255,255,0.5);
+  touch-action: none;
+}
+.seal-drag.doc2{
+  position: absolute;
+  bottom:  0;
+  left: 50%;
+  width: 70px;
+  background: rgba(255,255,255,0.5);
+  touch-action: none;
+}
+.seal-drag.doc3{
+  position: absolute;
+  bottom:  0;
   left: 50%;
   width: 70px;
   background: rgba(255,255,255,0.5);

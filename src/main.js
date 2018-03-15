@@ -25,22 +25,22 @@ const routes = [{
   path: '/',
   component: Home
 }, {
-  path: '/flowdetail/:type',
+  path: '/flowdetail/:type/:id',
   component: FlowDetail
 }, {
-  path: '/docview/:id',
+  path: '/docview/:type/:id',
   component: DocView
 }, {
-  path: '/docsign',
+  path: '/docsign/:id',
   component: DocSign
 }, {
-  path: '/sendsms',
+  path: '/sendsms/:id',
   component: SendSms
 }, {
   path: '/myfiles',
   component: MyFiles
 }, {
-  path: '/userlist/:type',
+  path: '/userlist/:type/:id',
   component: UserList
 }]
 

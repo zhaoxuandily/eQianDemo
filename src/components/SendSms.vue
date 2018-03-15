@@ -1,7 +1,7 @@
 <template>
   <div class="sendsmsPage" >
     <img class="page-img" src="../assets/sms.png"> 
-    <router-link to="/flowdetail/4" class="link-done"></router-link>
+    <router-link  :to="{path:'/flowdetail/4/'+id }"  class="link-done"></router-link>
   </div>  
 </template>
 
@@ -17,6 +17,9 @@ export default {
     }
   },
   computed: {
+    id: function () {
+      return this.$route.params.id
+    }
   }
 }
 </script>

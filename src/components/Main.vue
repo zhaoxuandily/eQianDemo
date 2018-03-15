@@ -11,7 +11,7 @@
       </grid-item>
     </grid>
     <div>
-      <router-link :to="`/flowdetail/${selected}`" v-for= "item in doclist" :key="item.id">
+      <router-link :to="`/flowdetail/${selected}/${item.id}`" v-for= "item in doclist" :key="item.id">
         <div  class="item-cell clearfix" >
           <div class="col-new clearfix" >
             <img class="new" v-if="item.new" src="../assets/new.png">
