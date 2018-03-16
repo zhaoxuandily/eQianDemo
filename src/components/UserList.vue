@@ -1,8 +1,8 @@
 <template>
   <div class="userlistPage" >
     <img class="page-img" v-if="id === '1' " src="../assets/userlist0_top_1.png" >
-    <img class="page-img" v-if="id === '2' " src="../assets/userlist0_top_1.png" >
-    <img class="page-img" v-if="id === '3' " src="../assets/userlist0_top_1.png" >
+    <img class="page-img" v-if="id === '2' " src="../assets/userlist0_top_2.png" >
+    <img class="page-img" v-if="id === '3' " src="../assets/userlist0_top_3.png" >
     <img class="page-img" v-show="type === '1' && !addUser" src="../assets/userlist0.png"> 
     <img class="page-img" v-show="type === '1' && addUser && !selectUser" src="../assets/userlist1.png"> 
     <img class="page-img" v-show="type === '1' && addUser && selectUser" src="../assets/userlist1_1.png"> 
