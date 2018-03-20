@@ -31,7 +31,7 @@ const routes = [{
   path: '/docview/:type/:id',
   component: DocView
 }, {
-  path: '/docsign/:id',
+  path: '/docsign/:type/:id',
   component: DocSign
 }, {
   path: '/sendsms/:id',

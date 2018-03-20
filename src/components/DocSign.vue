@@ -1,8 +1,11 @@
 <template>
   <div class="docsignPage">
-    <img class="page-img" v-if="id === '1' " src="../assets/doc1.png" >
-    <img class="page-img" v-else-if="id === '2' " src="../assets/doc2.png" >
-    <img class="page-img" v-else-if="id === '3' " src="../assets/doc3.png" >
+    <img class="page-img" v-if="id === '1' && type === '1' " src="../assets/doc1.png" >
+    <img class="page-img" v-else-if="id === '2' && type === '1' " src="../assets/doc2.png" >
+    <img class="page-img" v-else-if="id === '3'  && type === '1' " src="../assets/doc3.png" >
+    <img class="page-img" v-if="id === '1' && type === '2' " src="../assets/doc1_0.png" >
+    <img class="page-img" v-else-if="id === '2' && type === '2' " src="../assets/doc2_0.png" >
+    <img class="page-img" v-else-if="id === '3'  && type === '2' " src="../assets/doc3_0.png" >
     <img class="sign_middle" src="../assets/sign_middle.png">
     <div class="seal-drag " :class="'doc'+ id" v-drag id="sealdrag" v-show="showSeal"><img src="../assets/seal.png"></div>
     <div class="bottom-bar">
@@ -38,6 +41,9 @@ export default {
   computed: {
     id: function () {
       return this.$route.params.id
+    },
+    type: function () {
+      return this.$route.params.type
     }
   },
   methods: {

@@ -5,7 +5,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    z-index: 100;" :left-options="{backText: '',preventGoBack: preventGoBack }" :right-options="{showMore:false }" :title="title" @on-click-back='onClickBack'></x-header>
+    z-index: 100;" :left-options="{backText: '',preventGoBack: preventGoBack,showBack:showBack }" :right-options="{showMore:false }" :title="title" @on-click-back='onClickBack'></x-header>
     <transition
         :name="viewTransition" :css="!!direction">      
       <router-view></router-view>      
@@ -41,6 +41,13 @@ export default {
     },
     preventGoBack: function () {
       if (this.$route.params.type === '4' || this.$route.path === '/') {
+        return true
+      }
+    },
+    showBack: function () {
+      if (this.$route.path === '/') {
+        return false
+      } else {
         return true
       }
     }
