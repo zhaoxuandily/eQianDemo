@@ -81,13 +81,13 @@ export default {
       docs2: [{
         id: 1,
         title: '全日制劳动合同.doc',
-        name: '发起人： 李四',
+        name: '发起人： 张三',
         date: '2016/09/04 10:13',
         state: '我已签署'
       }, {
         id: 2,
         title: '租房合同.doc',
-        name: '发起人： 李四',
+        name: '发起人： 张三',
         date: '2016/09/04 10:13',
         state: '我已签署'
       }, {

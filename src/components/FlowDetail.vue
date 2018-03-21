@@ -101,8 +101,8 @@ export default {
 .flowdetailPage .link-sign {
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 33.3%;
+  left: 0;
+  width: 100%;
   height: 50px;
   height: 13vw;
 }

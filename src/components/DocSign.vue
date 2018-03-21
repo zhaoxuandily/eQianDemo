@@ -6,7 +6,6 @@
     <img class="page-img" v-if="id === '1' && type === '2' " src="../assets/doc1_0.png" >
     <img class="page-img" v-else-if="id === '2' && type === '2' " src="../assets/doc2_0.png" >
     <img class="page-img" v-else-if="id === '3'  && type === '2' " src="../assets/doc3_0.png" >
-    <img class="sign_middle" src="../assets/sign_middle.png">
     <div class="seal-drag " :class="'doc'+ id" v-drag id="sealdrag" v-show="showSeal"><img src="../assets/seal.png"></div>
     <div class="bottom-bar">
       <img src="../assets/sign_bottom.png">
@@ -91,13 +90,6 @@ export default {
   margin-bottom: 130px;
   margin-bottom: 35vw;
 }
-.sign_middle{
-  position: fixed;
-  top: 240px;
-  top: 36vh;
-  width: 30px;
-  right: 0;
-}
 .bottom-bar{
   position: fixed;
   bottom: 0;
@@ -114,8 +106,8 @@ export default {
   height: 23vw;
   width: 82px;
   width: 22vw;
-  left: 70px;
-  left: 19vw;
+  left: 0;
+  left: 0;
 }
 
 .btn-sure{

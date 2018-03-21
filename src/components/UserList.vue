@@ -11,8 +11,8 @@
     <router-link :to="{ path:'/docview/2/' + id}" class="link-view"></router-link>
     <div class="link-add" @click="addUser = true"></div>
     <div class="link-select" v-if=" type === '1' && addUser " @click="selectUser = true"></div>
-    <router-link :to="{path:'/userlist/3/' + id}" v-if="addUser" class="btn-sure" replace></router-link>
-    <router-link :to="{path:'/docsign/2/'+id }" v-if="type === '3'" class="btn-sure"></router-link>
+    
+    <router-link :to="{path:'/docsign/2/'+id }" v-if="type === '1'" class="btn-sure"></router-link>
     <div v-if="type === '1' && !addUser" class="btn-sure" @click="addUser = true"></div>
     <div class="btn-cancel" @click="back" ></div>
   </div>
